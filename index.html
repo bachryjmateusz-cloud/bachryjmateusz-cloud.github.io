@@ -716,13 +716,87 @@ footer {
                     <li>Array aggregation and data transformation</li>
                 </ul>
 
-                <h4>Testing</h4>
+                
+<h4>Testing &amp; Validation</h4>
 
-                <p>
-                    Tested with sample orders containing
-                    multiple products and different VAT rates,
-                    including changes in payment status.
-                </p>
+<p>
+    Functional testing was performed using sample
+    e-commerce orders in a controlled environment.
+</p>
+
+<div style="display: grid; gap: 12px; margin: 20px 0;">
+
+    <div class="card">
+        <h4 style="color: #34d399; margin: 0;">
+            ✓ New Order Processing
+        </h4>
+        <p>
+            Verified that new orders are retrieved
+            from Base.com and added to Google Sheets.
+        </p>
+    </div>
+
+    <div class="card">
+        <h4 style="color: #34d399; margin: 0;">
+            ✓ Duplicate Prevention
+        </h4>
+        <p>
+            Repeated execution did not create duplicate
+            records during the sample tests.
+        </p>
+    </div>
+
+    <div class="card">
+        <h4 style="color: #34d399; margin: 0;">
+            ✓ Payment Status Update
+        </h4>
+        <p>
+            Verified that an existing order was updated
+            when its payment status changed from unpaid
+            to paid.
+        </p>
+    </div>
+
+    <div class="card">
+        <h4 style="color: #34d399; margin: 0;">
+            ✓ Multiple VAT Rates
+        </h4>
+        <p>
+            Tested product-level calculations for
+            different VAT rates within a single order.
+        </p>
+    </div>
+
+    <div class="card">
+        <h4 style="color: #34d399; margin: 0;">
+            ✓ Delivery Cost Allocation
+        </h4>
+        <p>
+            Tested proportional allocation of delivery
+            costs into net and VAT amounts.
+            Tax compliance requires further validation.
+        </p>
+    </div>
+
+    <div class="card">
+        <h4 style="color: #fbbf24; margin: 0;">
+            ! Numeric Data Type Validation
+        </h4>
+        <p>
+            A regional formatting issue caused some
+            decimal values to be interpreted as dates
+            in Google Sheets. Presentation data was
+            corrected manually. A permanent integration
+            fix is pending.
+        </p>
+    </div>
+
+</div>
+
+<p style="font-size: 12px; color: #94a3b8;">
+    Functional tests do not constitute full production,
+    accounting or tax compliance validation.
+</p>
 
                 <h4>Next steps</h4>
 
