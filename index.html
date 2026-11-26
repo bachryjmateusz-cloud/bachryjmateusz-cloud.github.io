@@ -2,363 +2,853 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Business and financial automation portfolio.">
-    <title>Mateusz | Business & Financial Automation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Business automation, financial data and economics portfolio.">
+<title>Mateusz | Finance & Automation</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+:root {
+    --bg: #090e19;
+    --card: #111b2c;
+    --border: #23324a;
+    --accent: #38bdf8;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --green: #34d399;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: #e2e8f0;
-            line-height: 1.7;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0 24px;
-        }
+body {
+    font-family: Inter, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 25px 0;
-        }
+.container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 0 25px;
+}
 
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #60a5fa;
-        }
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--border);
+}
 
-        nav a {
-            color: #94a3b8;
-            text-decoration: none;
-            margin-right: 20px;
-        }
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+}
 
-        nav a:hover {
-            color: #60a5fa;
-        }
+.logo span {
+    color: var(--accent);
+}
 
-        .hero {
-            padding: 100px 0;
-        }
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 14px;
+    transition: .2s;
+}
 
-        .eyebrow {
-            color: #60a5fa;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-        }
+nav a:hover {
+    color: var(--accent);
+}
 
-        h1 {
-            font-size: clamp(36px, 6vw, 65px);
-            line-height: 1.15;
-            max-width: 850px;
-            color: #f8fafc;
-            margin-bottom: 25px;
-        }
+.hero {
+    position: relative;
+    padding: 100px 0 65px;
+    background: radial-gradient(
+        ellipse at 80% 20%,
+        rgba(14,165,233,.09),
+        transparent 65%
+    );
+}
 
-        h2 {
-            font-size: 30px;
-            margin-bottom: 25px;
-            color: #f8fafc;
-        }
+.availability {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid #164e3d;
+    background: rgba(52,211,153,.06);
+    color: var(--green);
+    border-radius: 30px;
+    padding: 6px 14px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
 
-        h3 {
-            margin-bottom: 12px;
-        }
+.dot {
+    width: 7px;
+    height: 7px;
+    background: var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--green);
+}
 
-        p {
-            color: #94a3b8;
-            margin-bottom: 18px;
-        }
+.intro {
+    color: var(--muted);
+    font-size: 19px;
+}
 
-        .hero p {
-            max-width: 700px;
-            font-size: 19px;
-        }
+h1 {
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: 1.1;
+    letter-spacing: -3px;
+    margin: 16px 0;
+}
 
-        .button {
-            display: inline-block;
-            background: #2563eb;
-            color: white;
-            text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 8px;
-            margin-top: 15px;
-        }
+.gradient {
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
 
-        .button:hover {
-            background: #1d4ed8;
-        }
+.subtitle {
+    color: var(--accent);
+    font-size: 21px;
+    margin: 20px 0;
+}
 
-        section {
-            padding: 60px 0;
-            border-top: 1px solid #263449;
-        }
+.hero-description {
+    max-width: 690px;
+    color: var(--muted);
+    font-size: 18px;
+}
 
-        .card {
-            background: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 14px;
-            padding: 28px;
-        }
+.location {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 20px 0;
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
 
-        .tag {
-            display: inline-block;
-            background: #263b55;
-            color: #93c5fd;
-            padding: 5px 12px;
-            border-radius: 6px;
-            font-size: 13px;
-            margin: 4px 4px 4px 0;
-        }
+.button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px 23px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: .2s;
+}
 
-        .status {
-            color: #fbbf24;
-            font-size: 12px;
-            letter-spacing: 1px;
-            font-weight: bold;
-            margin-bottom: 12px;
-        }
+.primary {
+    background: var(--accent);
+    color: #07111e;
+}
 
-        .workflow {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            background: #111827;
-            padding: 30px 15px;
-            border-radius: 10px;
-            margin: 25px 0;
-        }
+.primary:hover {
+    background: #7dd3fc;
+    transform: translateY(-2px);
+}
 
-        .node {
-            background: #263b55;
-            border: 1px solid #475569;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-        }
+.secondary {
+    color: var(--text);
+    border: 1px solid #334155;
+}
 
-        .arrow {
-            color: #60a5fa;
-            font-size: 24px;
-        }
+.secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
 
-        ul {
-            padding-left: 22px;
-            margin-bottom: 20px;
-            color: #cbd5e1;
-        }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid #334155;
-            color: #94a3b8;
-            font-size: 14px;
-        }
+.card {
+    background: linear-gradient(145deg, #142034, #101827);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 26px;
+    transition: .25s;
+}
 
-        @media (max-width: 600px) {
-            .hero {
-                padding: 60px 0;
-            }
+.card:hover {
+    border-color: #3b6689;
+    transform: translateY(-3px);
+}
 
-            .card {
-                padding: 20px;
-            }
+.card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
 
-            nav a {
-                margin-right: 12px;
-            }
-        }
-    </style>
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.number {
+    color: var(--accent);
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+section {
+    padding: 65px 0;
+}
+
+.section-label {
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 34px;
+    letter-spacing: -1px;
+    margin-bottom: 25px;
+}
+
+.project {
+    padding: 32px;
+}
+
+.project-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.status {
+    color: #fbbf24;
+    font-size: 12px;
+}
+
+.workflow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 45px 20px;
+    margin: 25px 0;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background-color: #0a1220;
+    background-image:
+        linear-gradient(#19283b 1px, transparent 1px),
+        linear-gradient(90deg, #19283b 1px, transparent 1px);
+    background-size: 25px 25px;
+}
+
+.node {
+    background: #152840;
+    border: 1px solid #357399;
+    padding: 18px;
+    min-width: 125px;
+    border-radius: 10px;
+    text-align: center;
+    color: #bae6fd;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.node small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+.arrow {
+    color: var(--accent);
+    font-size: 24px;
+}
+
+.project h3 {
+    font-size: 27px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.tag {
+    border: 1px solid #24415b;
+    background: #13283d;
+    color: #7dd3fc;
+    padding: 5px 11px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.case-study {
+    margin-top: 25px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+}
+
+summary {
+    cursor: pointer;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.case-content {
+    padding-top: 25px;
+}
+
+.case-content h4 {
+    color: var(--text);
+    margin: 20px 0 8px;
+}
+
+.case-content ul {
+    padding-left: 20px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.planned {
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.about-text {
+    max-width: 850px;
+    color: var(--muted);
+}
+
+.about-text p {
+    margin-bottom: 18px;
+}
+
+.education {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.education-item {
+    border-left: 2px solid var(--accent);
+    padding-left: 20px;
+}
+
+.education-item p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.contact {
+    text-align: center;
+    padding: 50px 25px;
+    background: radial-gradient(
+        ellipse at center,
+        #142b43,
+        #101827 75%
+    );
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.contact p {
+    color: var(--muted);
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact .buttons {
+    justify-content: center;
+}
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 30px 0;
+    color: var(--muted);
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+@media (max-width: 800px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .two-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 65px 0 40px;
+    }
+
+    h1 {
+        letter-spacing: -1.5px;
+    }
+
+    nav a {
+        margin: 0 12px 0 0;
+    }
+
+    .workflow {
+        flex-direction: column;
+    }
+
+    .node {
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .arrow {
+        transform: rotate(90deg);
+    }
+
+    .project {
+        padding: 20px;
+    }
+
+    section {
+        padding: 40px 0;
+    }
+}
+</style>
 </head>
 
 <body>
-
 <div class="container">
 
-    <nav>
-        <div class="logo">MB.</div>
-        <div>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+<nav>
+    <div class="logo">MB<span>.</span></div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
-    <header class="hero">
-        <div class="eyebrow">
-            ECONOMICS & AUTOMATION
-        </div>
+<header class="hero">
 
-        <h1>Building smarter business processes.</h1>
+    <div class="availability">
+        <span class="dot"></span>
+        OPEN TO INTERNSHIPS & JUNIOR ROLES
+    </div>
 
-        <p>
-            Hi, I'm Mateusz, an economics student interested
-            in business process automation, financial data,
-            e-commerce integrations and US taxation.
-        </p>
+    <p class="intro">Hi, I'm Mateusz.</p>
 
-        <a class="button" href="#projects">
-            Explore my projects
+    <h1>
+        Finance meets<br>
+        <span class="gradient">technology.</span>
+    </h1>
+
+    <p class="subtitle">
+        Business Automation & Financial Data
+    </p>
+
+    <p class="hero-description">
+        Economics student developing practical solutions
+        for financial processes, e-commerce integrations
+        and business automation.
+    </p>
+
+    <p class="location">
+        Wroclaw, Poland · Open to remote opportunities
+    </p>
+
+    <div class="buttons">
+        <a href="#projects" class="button primary">
+            Explore my projects →
         </a>
-    </header>
 
-    <section id="about">
-        <h2>About me</h2>
-
-        <p>
-            I am a first-year Economics student at the
-            University of Wroclaw, developing practical skills
-            in business automation and financial data processing.
-        </p>
-
-        <p>
-            My goal is to combine economic knowledge with
-            automation tools to improve business processes,
-            reduce manual work and support data-driven decisions.
-        </p>
-
-        <p>
-            I am also preparing for the IRS Enrolled Agent
-            examination and expanding my knowledge of US taxation.
-        </p>
-    </section>
-
-    <section id="projects">
-        <h2>Featured projects</h2>
-
-        <article class="card">
-            <div class="status">
-                PERSONAL PROJECT — IN DEVELOPMENT
-            </div>
-
-            <h3>E-commerce Order Automation</h3>
-
-            <p>
-                An automated workflow designed to synchronize
-                e-commerce orders, process financial data
-                and monitor payment status.
-            </p>
-
-            <div class="workflow">
-                <div class="node">Base.com</div>
-                <span class="arrow">→</span>
-                <div class="node">Make</div>
-                <span class="arrow">→</span>
-                <div class="node">Data Processing</div>
-                <span class="arrow">→</span>
-                <div class="node">Google Sheets</div>
-            </div>
-
-            <h3>Key features</h3>
-
-            <ul>
-                <li>Automated order synchronization</li>
-                <li>Product-level VAT calculations</li>
-                <li>Net and gross amount processing</li>
-                <li>Payment status monitoring</li>
-                <li>Duplicate prevention using Data Store</li>
-                <li>Automatic updates of existing orders</li>
-            </ul>
-
-            <span class="tag">Make</span>
-            <span class="tag">Base.com</span>
-            <span class="tag">Google Sheets</span>
-            <span class="tag">Data Processing</span>
-            <span class="tag">VAT</span>
-        </article>
-    </section>
-
-    <section id="skills">
-        <h2>Technical skills</h2>
-
-        <div class="grid">
-
-            <div class="card">
-                <h3>Process Automation</h3>
-                <p>
-                    Make scenarios, routers, filters,
-                    iterators and aggregators.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Data Processing</h3>
-                <p>
-                    Google Sheets, data mapping,
-                    mathematical functions and data aggregation.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Financial Knowledge</h3>
-                <p>
-                    Economics, VAT calculations,
-                    financial data and US taxation fundamentals.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Currently Learning</h3>
-                <p>
-                    REST APIs, webhooks, JSON,
-                    n8n and advanced automation techniques.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Let's connect</h2>
-
-        <p>
-            I am open to internships, junior positions
-            and opportunities in business automation,
-            finance and e-commerce.
-        </p>
-
-        <a class="button"
-           href="https://github.com/bachryjmateusz-cloud">
+        <a href="https://github.com/bachryjmateusz-cloud"
+           class="button secondary">
             GitHub Profile
         </a>
-    </section>
+    </div>
+
+</header>
+
+<div class="grid">
+
+    <div class="card">
+        <div class="number">01 / EDUCATION</div>
+        <h3>Economics</h3>
+        <p>University of Wroclaw</p>
+        <p>First-year undergraduate student</p>
+    </div>
+
+    <div class="card">
+        <div class="number">02 / TECHNOLOGY</div>
+        <h3>Automation</h3>
+        <p>Business process optimization</p>
+        <p>System integration & data processing</p>
+    </div>
+
+    <div class="card">
+        <div class="number">03 / FINANCE</div>
+        <h3>Financial Data</h3>
+        <p>US taxation fundamentals</p>
+        <p>Enrolled Agent exam preparation</p>
+    </div>
 
 </div>
 
+<section id="projects">
+
+    <div class="section-label">01 / PORTFOLIO</div>
+    <h2>Selected projects</h2>
+
+    <article class="card project">
+
+        <div class="project-top">
+            <div class="number">PROJECT 01 — E-COMMERCE</div>
+            <div class="status">● In development</div>
+        </div>
+
+        <div class="workflow">
+
+            <div class="node">
+                Base.com
+                <small>Order data</small>
+            </div>
+
+            <span class="arrow">→</span>
+
+            <div class="node">
+                Make
+                <small>Automation</small>
+            </div>
+
+            <span class="arrow">→</span>
+
+            <div class="node">
+                VAT & Logic
+                <small>Data processing</small>
+            </div>
+
+            <span class="arrow">→</span>
+
+            <div class="node">
+                Google Sheets
+                <small>Reporting</small>
+            </div>
+
+        </div>
+
+        <h3>E-commerce Order Automation</h3>
+
+        <p>
+            A personal automation project designed to
+            synchronize e-commerce orders, calculate financial
+            values and maintain an updated order register.
+        </p>
+
+        <div class="tags">
+            <span class="tag">Make</span>
+            <span class="tag">Base.com</span>
+            <span class="tag">Google Sheets</span>
+            <span class="tag">Data Store</span>
+            <span class="tag">VAT Calculations</span>
+        </div>
+
+        <details class="case-study">
+
+            <summary>View case study →</summary>
+
+            <div class="case-content">
+
+                <h4>Business problem</h4>
+
+                <p>
+                    Manual order processing can lead to
+                    duplicated records, inconsistent financial
+                    data and outdated payment information.
+                </p>
+
+                <h4>Proposed solution</h4>
+
+                <p>
+                    An automated workflow that retrieves orders
+                    from Base.com, processes product-level data
+                    and synchronizes the results with Google Sheets.
+                </p>
+
+                <h4>Implemented features</h4>
+
+                <ul>
+                    <li>Order retrieval from Base.com</li>
+                    <li>Product-level net and gross calculations</li>
+                    <li>VAT calculations for different tax rates</li>
+                    <li>Payment status monitoring</li>
+                    <li>Duplicate prevention using Data Store</li>
+                    <li>Conditional updates of existing records</li>
+                    <li>Delivery cost processing</li>
+                    <li>Array aggregation and data transformation</li>
+                </ul>
+
+                <h4>Testing</h4>
+
+                <p>
+                    Tested with sample orders containing
+                    multiple products and different VAT rates,
+                    including changes in payment status.
+                </p>
+
+                <h4>Next steps</h4>
+
+                <ul>
+                    <li>Error handling and recovery</li>
+                    <li>Credit consumption optimization</li>
+                    <li>Financial reconciliation checks</li>
+                    <li>Improved scalability</li>
+                </ul>
+
+                <h4>Project scope</h4>
+
+                <p>
+                    Personal learning project using test data.
+                    Not a production deployment or a certified
+                    tax calculation system.
+                </p>
+
+            </div>
+
+        </details>
+
+    </article>
+
+    <div class="two-columns">
+
+        <article class="card">
+            <div class="planned">PROJECT 02 — PLANNED</div>
+            <h3>Invoice Processing Automation</h3>
+            <p>
+                Automated invoice collection, data extraction
+                and financial document registration.
+            </p>
+            <div class="tags">
+                <span class="tag">n8n</span>
+                <span class="tag">Documents</span>
+                <span class="tag">Finance</span>
+            </div>
+        </article>
+
+        <article class="card">
+            <div class="planned">PROJECT 03 — PLANNED</div>
+            <h3>US Tax Analysis</h3>
+            <p>
+                A financial case study focused on US individual
+                taxation and structured tax calculations.
+            </p>
+            <div class="tags">
+                <span class="tag">US Tax</span>
+                <span class="tag">Excel</span>
+                <span class="tag">Financial Analysis</span>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+<section id="about">
+
+    <div class="section-label">02 / PROFILE</div>
+    <h2>About me</h2>
+
+    <div class="about-text">
+
+        <p>
+            I am a first-year Economics student at the
+            University of Wroclaw with a strong interest
+            in finance, taxation and business automation.
+        </p>
+
+        <p>
+            I am developing practical technical skills through
+            personal projects focused on automating repetitive
+            tasks, integrating business systems and improving
+            financial data processing.
+        </p>
+
+        <p>
+            Alongside my university studies, I am preparing
+            for the Enrolled Agent examination using
+            HOCK International study materials.
+        </p>
+
+        <p>
+            My goal is to combine financial knowledge
+            with technology and develop a career in
+            financial and business process automation.
+        </p>
+
+    </div>
+
+</section>
+
+<section id="skills">
+
+    <div class="section-label">03 / COMPETENCIES</div>
+    <h2>Technical skills</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="number">AUTOMATION</div>
+            <h3>Make</h3>
+            <p>
+                Scenarios, routers, filters, iterators,
+                aggregators, Data Store and conditional logic.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="number">DATA</div>
+            <h3>Data Processing</h3>
+            <p>
+                Google Sheets, data mapping, array functions,
+                mathematical calculations and transformations.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="number">INTEGRATION</div>
+            <h3>E-commerce</h3>
+            <p>
+                Base.com, order synchronization,
+                payment monitoring and product data.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="number">FINANCE</div>
+            <h3>Financial Knowledge</h3>
+            <p>
+                Economics, VAT calculation fundamentals
+                and US individual taxation.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="number">CURRENTLY LEARNING</div>
+            <h3>APIs & n8n</h3>
+            <p>
+                REST APIs, HTTP, JSON, webhooks
+                and advanced workflow automation.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="number">LANGUAGES</div>
+            <h3>Communication</h3>
+            <p>Polish — Native</p>
+            <p>English — B2 (self-assessed)</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="education">
+
+    <div class="section-label">04 / DEVELOPMENT</div>
+    <h2>Education & learning</h2>
+
+    <div class="card education">
+
+        <div class="education-item">
+            <h3>University of Wroclaw</h3>
+            <p>Economics — Undergraduate studies</p>
+            <p>2026 – Present · Part-time</p>
+        </div>
+
+        <div class="education-item">
+            <h3>Enrolled Agent Exam Preparation</h3>
+            <p>HOCK International</p>
+            <p>US taxation — Independent study</p>
+        </div>
+
+        <div class="education-item">
+            <h3>Automation & System Integration</h3>
+            <p>Independent learning and practical projects</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="contact">
+
+    <div class="contact">
+
+        <div class="section-label">05 / CONTACT</div>
+
+        <h2>Let's build something smarter.</h2>
+
+        <p>
+            I am open to internships and junior opportunities
+            in business automation, financial operations,
+            e-commerce and data processing.
+        </p>
+
+        <div class="buttons">
+            <a class="button primary"
+               href="https://github.com/bachryjmateusz-cloud">
+                Connect on GitHub →
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
 <footer>
-    Mateusz | Business & Financial Automation Portfolio
+    <span>© 2026 Mateusz — Personal Portfolio</span>
+    <span>FINANCE · BUSINESS · TECHNOLOGY</span>
 </footer>
 
+</div>
 </body>
 </html>
